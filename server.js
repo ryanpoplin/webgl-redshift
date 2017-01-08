@@ -1,5 +1,7 @@
 'use strict';
 const Hapi = require('hapi');
+const Redshift = require('node-redshift');
+
 // const Path = require('path');
 const server = new Hapi.Server({
     /*connections: {
@@ -45,4 +47,5 @@ server.start((err) => {
         throw err;
     }
     console.log(server.info.uri);
+    // TODO: setup redshift-node package example here after you've got the cluster setup, etc...
 });
