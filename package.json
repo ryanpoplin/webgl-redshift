@@ -1,0 +1,31 @@
+{
+  "name": "webgl-redshift",
+  "version": "1.0.0",
+  "description": "webgl-redshift poc",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanpoplin/webgl-redshift.git"
+  },
+  "keywords": [
+    "aws",
+    "redshift",
+    "node.js",
+    "webgl",
+    "babylonjs"
+  ],
+  "author": "Ryan Poplin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanpoplin/webgl-redshift/issues"
+  },
+  "homepage": "https://github.com/ryanpoplin/webgl-redshift#readme",
+  "devDependencies": {
+    "hapi": "^16.1.0",
+    "node-redshift": "0.0.6"
+  }
+}
