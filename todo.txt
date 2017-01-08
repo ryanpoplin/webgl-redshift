@@ -1,0 +1,6 @@
+- create a random canvas/webgl coordinate script for create the data I need to load into redshift. Don't for get to write the regex script that formats the json properly for redshift upload, too.
+- make sure that the redshift cluster is public and the security group allows access to 0.0.0.0/0 and that you can access the database via SQLWorkbenchJ.
+- create the schema and load that into redshift
+- upload the json into an s3 bucket and then in SQLWJ make the upload.
+- after that's all successful, make sure that the node-redshift model is open to a live connection pool and gets our data into the hapi server. For now I can just have a setInterval running in the browser until the data set is not undefined (refactor this with Websocket)
+- Done!
