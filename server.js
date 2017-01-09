@@ -1,18 +1,8 @@
 'use strict';
 const Hapi = require('hapi');
-// const Redshift = require('node-redshift');
-// const Path = require('path');
 const fs = require('fs');
 const pg = require('pg');
-const server = new Hapi.Server({
-    /*connections: {
-        routes: {
-            files: {
-                relativeTo: Path.join(__dirname, 'public')
-            }
-        }
-    }*/
-});
+const server = new Hapi.Server();
 server.register(require('inert'), () => {console.log('inert');});
 server.connection({port: 8080});
 server.route({

@@ -15,13 +15,6 @@
       window.addEventListener('DOMContentLoaded', function () {
           $.get('http://localhost:8080/webgl/coordinates', function (data) {
               BjsApp.init(JSON.parse(data));
-              /*if (window.Worker) { 
-                  var worker = new Worker('http://localhost:8080/js');
-                  worker.postMessage(JSON.stringify({doc: document, data: JSON.parse(data), babylon: BABYLON}));
-                  worker.onmessage = function (e) {
-                      console.dir(e.data.result);
-                  };
-              }*/
           });
       });
     </script>
