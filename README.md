@@ -2,7 +2,7 @@
 
 ## I'm going to try to make an open-source big data viz tool with these technologies (It's a fun POC)
 
-### What you'll to get this example running:
+### What you'll need to get this example running:
     - AWS Account with a IAM user with Full S3, Redshift and VPC access (You've got some AWS experience)
     - An SQL client (Upload your coordinates JSON file (I've included a canvas random coordinate generator with Redshift JSON formatting to help you get that moving) into S3 (include your credentials) so that you can then upload that data into Redshift with this client)
     - Set your S3 and Redshift URI's in the relevent files
