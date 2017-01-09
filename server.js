@@ -37,7 +37,7 @@ server.route({
     method: 'GET',
     path: '/webgl/coordinates',
     handler: (request, reply) => {
-        const pgString = 'postgres://:@webgl-data-viz.cp5omfcgotof.us-east-1.redshift.amazonaws.com:5439/data';
+        const pgString = 'postgres://:@:/';
         const client = new pg.Client(pgString);
         client.connect((err) => {
             if (err) {
