@@ -1,7 +1,9 @@
 'use strict';
 const Hapi = require('hapi');
-const Redshift = require('node-redshift');
+// const Redshift = require('node-redshift');
 // const Path = require('path');
+const fs = require('fs');
+const pg = require('pg');
 const server = new Hapi.Server({
     /*connections: {
         routes: {
@@ -41,18 +43,35 @@ server.route({
         reply.file('./public/js/app.js')
     }
 });
+server.route({
+    method: 'GET',
+    path: '/webgl/coordinates',
+    handler: (request, reply) => {
+        const pgString = 'postgres://:@webgl-data-viz.cp5omfcgotof.us-east-1.redshift.amazonaws.com:5439/data';
+        const client = new pg.Client(pgString);
+        client.connect((err) => {
+            if (err) {
+                console.log(err);
+                throw err;
+            } else {
+                const cmd = 'select * from webgl_coordinates;';
+                client.query(cmd, (err, data) => {
+                    if (err) {
+                        console.log(err);
+                        throw err;
+                    } else {
+                        const coordinatesArr = JSON.stringify(data.rows);
+                        console.log(coordinatesArr);
+                        reply(coordinatesArr);                     
+                    }
+                });
+            }
+        });    
+    }
+});
 server.start((err) => {
     if (err) {
         throw err;
     }
     console.log(server.info.uri);
-    /*const client = {
-        user: '',
-        database: '',
-        password: '',
-        port: '',
-        host: ''
-    };
-    const redshift = new Redshift(client);
-    redshift.query();*/
 });

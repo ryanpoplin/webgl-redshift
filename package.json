@@ -26,6 +26,7 @@
   "homepage": "https://github.com/ryanpoplin/webgl-redshift#readme",
   "devDependencies": {
     "hapi": "^16.1.0",
-    "node-redshift": "0.0.6"
+    "node-redshift": "0.0.6",
+    "pg": "^6.1.2"
   }
 }

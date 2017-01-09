@@ -5,6 +5,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>webgl-redshift</title> 
     <link rel='stylesheet' type='text/css' href='http://localhost:8080/css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src='http://localhost:8080/babylonjs'></script>
   </head>
   <body>
@@ -12,7 +13,16 @@
     <script src='http://localhost:8080/js'></script>
     <script>
       window.addEventListener('DOMContentLoaded', function () {
-        BjsApp.init();
+          $.get('http://localhost:8080/webgl/coordinates', function (data) {
+              BjsApp.init(JSON.parse(data));
+              /*if (window.Worker) { 
+                  var worker = new Worker('http://localhost:8080/js');
+                  worker.postMessage(JSON.stringify({doc: document, data: JSON.parse(data), babylon: BABYLON}));
+                  worker.onmessage = function (e) {
+                      console.dir(e.data.result);
+                  };
+              }*/
+          });
       });
     </script>
   </body>
