@@ -13,9 +13,10 @@
     <script src='http://localhost:8080/js'></script>
     <script>
       window.addEventListener('DOMContentLoaded', function () {
-          $.get('http://localhost:8080/webgl/coordinates', function (data) {
-              BjsApp.init(JSON.parse(data));
-          });
+          // $.get('http://localhost:8080/webgl/coordinates', function (data) {
+              // BjsApp.init(JSON.parse(data));
+              BjsApp.init({x: 3, y: 2, z: 4});
+          // });
       });
     </script>
   </body>
